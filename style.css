@@ -1,16 +1,14 @@
 /* Styling Only Related To ALL Pages */
 
 body {
-  padding-top: 30px;
-  margin-left: 0px;
+  background-position: center center;
 }
 /* ⬆⬆⬆⬆ Nav Bar Styling 
 ~~~~~ Taken From: 
 https://www.w3schools.com/css/css_navbar_horizontal.asp */
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: auto;
   background-color: #ffffff00;
   display: flex;
   justify-content: center;
