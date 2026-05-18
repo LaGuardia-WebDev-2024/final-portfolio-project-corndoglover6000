@@ -21,43 +21,27 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
       /* Styling Only Related To THIS Page */
-      /*~~~~~ Taken From:
-      https://www.w3schools.com/howto/howto_css_parallax.asp*/
-      .parallax {
-        /* The image used */
-        background-image: url("CS_Ed_Week_2025.jpg");
+      li a {
+        display: block;
+        color: rgb(124, 16, 151);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
 
-        /* Set a specific height */
-        min-height: 500px;
+      li a:hover:not(.active) {
+        text-shadow: 0 0 4px rgb(255, 0, 64);
+        transition: all 200ms ease-out;
+      }
 
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .textblock {
-        min-height: 500px;
-        background-color: black;
-        color: white;
-      }
-      .parent-flex {
-        display: flex;
-      }
-      .child-flex {
-        background-color: green;
-        margin: 30px;
-        padding: 10px;
-        text-align: justify;
-      }
-      .para-1{
-        display: flex;
-        align-items: center;
+      .active {
+      color: rgb(255, 0, 64);
       }
     
 
       #blinkies {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
         max-width: 700px;
         margin: auto;
@@ -73,7 +57,8 @@ Select ONE Additional Feature to Add
         height: 60;
       }
       #stamps {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
         max-width: 700px;
         margin: auto;
@@ -86,6 +71,7 @@ Select ONE Additional Feature to Add
         padding: 3px;
         margin: auto;
         margin-bottom: 10px;
+        padding-left: 5px;
       }
 
     </style>
@@ -297,7 +283,9 @@ function newColour() {
     </ul>
 
     <p>
-      blinkies are 150x20 pixel graphics that feature interests or little quips! they're super fun to make and super duper fun to collect
+      blinkies are 150x20 pixel graphics that feature interests or 
+      little quips! they're super fun to make and super duper fun to collect<br>
+      most of these aren't made by me - but some are :P
     </p>
 
     <div id="blinkies">
@@ -388,5 +376,11 @@ function newColour() {
       <img class="stamp" src="">
       <img class="stamp" src="">
     </div>
+
+    <p>
+      stamps are similar to blinkies but their dimensions are 60x100 pixels<br>
+      there are also so many other variations of cute gif decorations! like user boxes, dividers,
+      and buttons - cool stuff
+    </p>
   </body>
 </html>
