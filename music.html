@@ -2,13 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Final Project - About Me</title>
+    <title>the ultimate corndoglover website</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap" rel="stylesheet">
     <style>
       /* Styling Only Related To THIS Page */
       .parent-flex {
         display: flex;
-        background-color: purple;
+        background-color: rgb(255, 255, 255);
         align-items: center;
         justify-content: space-around;
         margin-bottom: 50px;
@@ -19,18 +22,42 @@
         padding: 20px;
       }
       .child-flex p {
-        background-color: pink;
+        background-color: rgb(255, 255, 255);
         padding: 20px;
         margin: 20px;
       }
 
+      .coral-pixels-regular {
+        font-family: "Coral Pixels", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+
+      li a {
+        display: block;
+        color: rgb(226, 40, 26);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        text-shadow: 0 0 4px rgb(255, 0, 157);
+        transition: all 200ms ease-out;
+      }
+
+      .active {
+      color: rgb(255, 218, 98);
+      }
+
       body{
-        background-color: #42f2f7;
+        background-color: rgb(255, 176, 124);
       }
     </style>
     <script type="text/javascript">
 // <![CDATA[
-var colours=new Array("#46acc2", "#9097c0", "#705d56", "#503831", "#62537a"); // what colour are the blobs
+var colours=new Array("rgb(255, 224, 120)", "rgb(255, 139, 23)", "rgb(255, 108, 23)", "rgb(255, 194, 84)", "rgb(255, 244, 224)"); // what colour are the blobs
 var speed=50; // speed of animation, lower is faster
 var blobs=30; // how many blobs are in the jar
 var size=75; // maximum blob size

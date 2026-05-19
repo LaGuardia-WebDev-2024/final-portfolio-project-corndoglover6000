@@ -2,16 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Final Project - Art</title>
+    <title>the ultimate corndoglover website</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
-      /* Styling Only Related To THIS Page */
-      .parent-flex {
-        display: flex;
-        background-color: purple;
-        justify-content: space-around;
-        padding: 10px;
-        margin-bottom: 20px;
+      li a {
+        display: block;
+        color: rgb(26, 121, 165);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        text-shadow: 0 0 4px rgb(219, 255, 13);
+        transition: all 200ms ease-out;
+      }
+
+      .active {
+      color: rgb(110, 150, 17);
       }
 
       img {
