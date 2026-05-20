@@ -16,6 +16,7 @@
  * Here are the Youtube Playlists that will be available to play. To add a new one,
  * first make sure that your playlist is set to 'Hidden' or 'Public' in Youtube.
  * 
+ * https://youtu.be/qF0dXT-v-vY?si=CuXgnBinILqz4j8u
  * Then, look for the URL (for example: https://www.youtube.com/playlist?list=PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7)
  * and copy only the part after 'list=' (for example: PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7).
  * Finally, write a name for your playlist and paste the code you copied in the list below.
@@ -26,7 +27,7 @@ var myPlaylists = {
     "90s HITS": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
     "00s HITS": 'PL69714D95619E327E',
     "VAPORWAVE": 'PLSChV4T8EDb9TZsLO23Tsj6-UUyAXtGg5',
-    "BIG THIEF": 'PLAmHUYdRfUv_P468uIBMA8t7csl2gFr10&si=o4Fvpg_gH5YxCaf0',
+    "BIG THIEF": 'PLAmHUYdRfUv_P468uIBMA8t7csl2gFr10&si=M0mjk6lDitg_lXpj',
     //"ANOTHER PLAYLIST": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
 };
 

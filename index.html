@@ -38,32 +38,70 @@ Select ONE Additional Feature to Add
       .active {
       color: rgb(255, 0, 64);
       }
-    
+
+      .scrolling {
+        animation: marquee 2s linear infinite;
+        display: inline-block;
+        padding-right: 10px;
+      }
+
+      div {
+        display: block;
+        unicode-bidi: isolate;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to { 
+          transform: translateX(-5500%);
+        }
+      }
+
+      @keyframes marquee2 {
+        from {
+          transform: translateX(0);
+        }
+        to { 
+          transform: translateX(-100%);
+        }
+      }
 
       #blinkies {
-        display: flex;
-        flex-wrap: wrap;
+        display: inline-block;
         align-items: center;
-        max-width: 700px;
         margin: auto;
         justify-content: center;
         background-color: white;
         margin-bottom: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        padding-left: 100%;
       }
       .blinkie {
         width: 150;
         height: 20;
+        animation: marquee 45s linear infinite;
+        display: inline-block;
+        
       }
       .stamp {
         height: 60;
+        animation: marquee 25s linear infinite;
+        display: inline-block;
       }
       #stamps {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        display: inline-block;
         max-width: 700px;
         margin: auto;
         margin-bottom: 10px;
+        line-height: 50px;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
       }
 
       p {
@@ -315,7 +353,7 @@ function newColour() {
       <img class="blinkie" src="https://pixelsafari.neocities.org/blinkies/web/ipod.gif">
       <img class="blinkie" src="https://pixelsafari.neocities.org/blinkies/glow2.gif">
       <img class="blinkie" src="https://pixelsafari.neocities.org/blinkies/innerdork.gif">
-      <img class="blinkie" height="20" src="https://pixelsafari.neocities.org/blinkies/chillinginbed.gif">
+      <img class="blinkie" height="20" width="150" src="https://pixelsafari.neocities.org/blinkies/chillinginbed.gif">
       <img class="blinkie" src="butch4butch.gif">
       <img class="blinkie" src="https://gifcity.carrd.co/assets/images/gallery186/6ac025c1.gif?v=3fc8f5cd">
       <img class="blinkie" src="https://gifcity.carrd.co/assets/images/gallery165/7e4c5b66.gif?v=3fc8f5cd">
