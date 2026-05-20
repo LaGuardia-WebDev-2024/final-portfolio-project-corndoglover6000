@@ -26,6 +26,7 @@ var myPlaylists = {
     "90s HITS": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
     "00s HITS": 'PL69714D95619E327E',
     "VAPORWAVE": 'PLSChV4T8EDb9TZsLO23Tsj6-UUyAXtGg5',
+    "BIG THIEF": 'PLAmHUYdRfUv_P468uIBMA8t7csl2gFr10&si=o4Fvpg_gH5YxCaf0',
     //"ANOTHER PLAYLIST": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
 };
 
