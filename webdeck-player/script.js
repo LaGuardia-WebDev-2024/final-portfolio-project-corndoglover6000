@@ -16,7 +16,6 @@
  * Here are the Youtube Playlists that will be available to play. To add a new one,
  * first make sure that your playlist is set to 'Hidden' or 'Public' in Youtube.
  * 
- * https://youtu.be/qF0dXT-v-vY?si=CuXgnBinILqz4j8u
  * Then, look for the URL (for example: https://www.youtube.com/playlist?list=PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7)
  * and copy only the part after 'list=' (for example: PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7).
  * Finally, write a name for your playlist and paste the code you copied in the list below.
@@ -28,7 +27,7 @@ var myPlaylists = {
     "00s HITS": 'PL69714D95619E327E',
     "VAPORWAVE": 'PLSChV4T8EDb9TZsLO23Tsj6-UUyAXtGg5',
     "BIG THIEF": 'PLAmHUYdRfUv_P468uIBMA8t7csl2gFr10&si=M0mjk6lDitg_lXpj',
-    //"ANOTHER PLAYLIST": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
+    "ANOTHER PLAYLIST": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
 };
 
 
@@ -49,12 +48,8 @@ var currentPlaylist = "90s HITS";
  * You can also delete the themes that you don't want.
 */
 var myThemes = {
-    "DEFAULT": 'default',
     "SILVER": 'silver',
-    "VIOLET": "violet",
-    "MINIMAL": "minimal",
-    "RED GRUNGE": "red-grunge",
-    //"ANOTHER THEME": 'another-theme',
+    
 };
 
 
@@ -62,7 +57,7 @@ var myThemes = {
  * [4. CURRENT THEME]
  * Set the theme of your player writing its name below.
  */
-var currentTheme = "DEFAULT";
+var currentTheme = "SILVER";
 
 
 // ===== END OF CONFIGURATION =====
@@ -117,14 +112,14 @@ for(var key in myPlaylists){
     playlistSelector.appendChild(option);
 }
 
-var themeSelector = document.getElementById("themeSelector");
-for(var key in myThemes){
-    var option = document.createElement('option');
-    option.value = key;
-    option.innerHTML = key;
-    themeSelector.appendChild(option);
-}
-themeSelector.value = currentTheme;
+//var themeSelector = document.getElementById("themeSelector");
+//for(var key in myThemes){
+    //var option = document.createElement('option');
+    //option.value = key;
+    //option.innerHTML = key;
+    //themeSelector.appendChild(option);
+//}
+//themeSelector.value = currentTheme;
 
 
 
