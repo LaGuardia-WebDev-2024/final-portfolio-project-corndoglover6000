@@ -15,8 +15,9 @@ li a {
   display: block;
   color: rgb(124, 16, 151);
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px;
   text-decoration: none;
+
 }
 
 li a:hover:not(.active) {

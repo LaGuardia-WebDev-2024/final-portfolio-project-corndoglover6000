@@ -22,12 +22,28 @@ Select ONE Additional Feature to Add
     <link rel="icon" type="image/x-icon" href="katamari.gif">
     <style>
       /* Styling Only Related To THIS Page */
+      
+      body{
+        background-color:rgb(210, 255, 127);
+      }
+
+      ul {
+        background-color: rgb(214, 214, 214);
+        padding-top: 5px;
+        border: outset;
+        margin-bottom: 10px;
+        max-width: 400px;
+        max-height: 40px;
+        text-align: center;
+      }
+
       li a {
         display: block;
         color: rgb(124, 16, 151);
         text-align: center;
-        padding: 14px 16px;
         text-decoration: none;
+        padding-bottom: 10px;
+        background-color:rgb(210, 255, 127);
       }
 
       li a:hover:not(.active) {
@@ -39,15 +55,9 @@ Select ONE Additional Feature to Add
       color: rgb(255, 0, 64);
       }
 
-      .scrolling {
-        animation: marquee 2s linear infinite;
-        display: inline-block;
-        padding-right: 10px;
-      }
-
-      div {
-        display: block;
-        unicode-bidi: isolate;
+      .extradiv {
+        max-width: 700px;
+        margin: auto;
       }
 
       @keyframes marquee {
@@ -64,7 +74,7 @@ Select ONE Additional Feature to Add
           transform: translateX(0);
         }
         to { 
-          transform: translateX(-100%);
+          transform: translateX(-4500%);
         }
       }
 
@@ -73,12 +83,15 @@ Select ONE Additional Feature to Add
         align-items: center;
         margin: auto;
         justify-content: center;
-        background-color: white;
         margin-bottom: 10px;
         overflow: hidden;
         white-space: nowrap;
         box-sizing: border-box;
         padding-left: 100%;
+        width: 600px;
+        background-color: rgb(214, 214, 214);
+        padding-top: 5px;
+        border: outset;
       }
       .blinkie {
         width: 150;
@@ -89,20 +102,32 @@ Select ONE Additional Feature to Add
       }
       .stamp {
         height: 60;
-        animation: marquee 25s linear infinite;
+        width: 100;
+        animation: marquee2 25s linear infinite;
         display: inline-block;
       }
       #stamps {
         display: inline-block;
-        max-width: 700px;
         margin: auto;
-        margin-bottom: 10px;
-        line-height: 50px;
-        color: white;
+        line-height: 60px;
         white-space: nowrap;
         overflow: hidden;
         box-sizing: border-box;
+        padding-left: 100%;
+        width: 600px;
+        background-color: rgb(214, 214, 214);
+        padding-top: 5px;
+        border: outset;
+        margin-bottom: 8px;
       }
+
+      #blinkies:hover .blinkie {
+			  animation-play-state: paused ;
+		  }
+
+      #stamps:hover .stamp {
+			  animation-play-state: paused ;
+		  }
 
       p {
         background-color: rgb(214, 214, 214);
@@ -315,6 +340,7 @@ function newColour() {
 </script>
   </head>
   <body>
+<div class="extradiv">
     <ul>
       <li><a class="active" href="index.html">home</a></li>
       <li><a href="music.html">music</a></li>
@@ -328,6 +354,7 @@ function newColour() {
       most of these aren't made by me - but some are :P
     </p>
 
+  <div class="extradiv">
     <div id="blinkies">
       <img class="blinkie" src="https://plasticdino.neocities.org/blinkie/stupid%20horse.gif">
       <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/2/throstttstores.gif">
@@ -382,9 +409,11 @@ function newColour() {
       <img class="blinkie" src="https://afroken.neocities.org/GRAPHICS/BLINKIES/greenvector.gif">
       <img class="blinkie" src="https://afroken.neocities.org/GRAPHICS/BLINKIES/bliss.gif">
     </div>
+  </div>
     <p>
       my friend called them "virtual bumber stickers" and i am inclined to agree
     </p>
+  <div class="extradiv">
     <div id="stamps">
       <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/2/bug.png">
       <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/3/flubtershy.gif">
@@ -429,12 +458,13 @@ function newColour() {
       <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/pinkiedash.png">
       <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/butch.png">
     </div>
+  </div>
     <p>
       stamps are similar to blinkies but their dimensions are 60x100 pixels<br>
       there are also so many other variations of cute gif decorations! like user boxes, dividers, favicons,
       and buttons - cool stuff
     </p>
-
+</div>
     
     
   </body>
