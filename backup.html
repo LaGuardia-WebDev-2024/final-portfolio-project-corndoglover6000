@@ -21,383 +21,49 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/x-icon" href="katamari.gif">
     <style>
-      /* Styling Only Related To THIS Page */
-      li a {
-        display: block;
-        color: rgb(124, 16, 151);
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+      img{
+        width: 50px;
       }
-
-      li a:hover:not(.active) {
-        text-shadow: 0 0 4px rgb(255, 0, 64);
-        transition: all 200ms ease-out;
-      }
-
-      .active {
-      color: rgb(255, 0, 64);
-      }
-    
-
-      #blinkies {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        max-width: 700px;
-        margin: auto;
-        justify-content: center;
-        background-color: white;
-        margin-bottom: 10px;
-      }
-      .blinkie {
-        width: 150;
-        height: 20;
-      }
-      .stamp {
-        height: 60;
-      }
-      #stamps {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        max-width: 700px;
-        margin: auto;
-        margin-bottom: 10px;
-      }
-
-      p {
-        background-color: rgb(214, 214, 214);
-        max-width: 600px;
-        border: outset;
-        padding: 3px;
-        margin: auto;
-        margin-bottom: 10px;
-        padding-left: 5px;
-      }
-
     </style>
-    <script type="text/javascript">
-// <![CDATA[
-var colour="random"; // in addition to "random" can be set to any valid colour eg "#f0f" or "red"
-var sparkles=50;
-
-/****************************
-*  Tinkerbell Magic Sparkle *
-*(c)2005-13 mf2fm web-design*
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
-var x=ox=400;
-var y=oy=300;
-var swide=800;
-var shigh=600;
-var sleft=sdown=0;
-var tiny=new Array();
-var star=new Array();
-var starv=new Array();
-var starx=new Array();
-var stary=new Array();
-var tinyx=new Array();
-var tinyy=new Array();
-var tinyv=new Array();
-
-window.onload=function() { if (document.getElementById) {
-  var i, rats, rlef, rdow;
-  for (var i=0; i<sparkles; i++) {
-    var rats=createDiv(3, 3);
-    rats.style.visibility="hidden";
-    rats.style.zIndex="999";
-    document.body.appendChild(tiny[i]=rats);
-    starv[i]=0;
-    tinyv[i]=0;
-    var rats=createDiv(5, 5);
-    rats.style.backgroundColor="transparent";
-    rats.style.visibility="hidden";
-    rats.style.zIndex="999";
-    var rlef=createDiv(1, 5);
-    var rdow=createDiv(5, 1);
-    rats.appendChild(rlef);
-    rats.appendChild(rdow);
-    rlef.style.top="2px";
-    rlef.style.left="0px";
-    rdow.style.top="0px";
-    rdow.style.left="2px";
-    document.body.appendChild(star[i]=rats);
-  }
-  set_width();
-  sparkle();
-}}
-
-function sparkle() {
-  var c;
-  if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
-    ox=x;
-    oy=y;
-    for (c=0; c<sparkles; c++) if (!starv[c]) {
-      star[c].style.left=(starx[c]=x)+"px";
-      star[c].style.top=(stary[c]=y+1)+"px";
-      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
-      star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="random")?newColour():colour;
-      star[c].style.visibility="visible";
-      starv[c]=50;
-      break;
-    }
-  }
-  for (c=0; c<sparkles; c++) {
-    if (starv[c]) update_star(c);
-    if (tinyv[c]) update_tiny(c);
-  }
-  setTimeout("sparkle()", 40);
-}
-
-function update_star(i) {
-  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
-  if (starv[i]) {
-    stary[i]+=1+Math.random()*3;
-    starx[i]+=(i%5-2)/5;
-    if (stary[i]<shigh+sdown) {
-      star[i].style.top=stary[i]+"px";
-      star[i].style.left=starx[i]+"px";
-    }
-    else {
-      star[i].style.visibility="hidden";
-      starv[i]=0;
-      return;
-    }
-  }
-  else {
-    tinyv[i]=50;
-    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
-    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
-    tiny[i].style.width="2px";
-    tiny[i].style.height="2px";
-    tiny[i].style.backgroundColor=star[i].childNodes[0].style.backgroundColor;
-    star[i].style.visibility="hidden";
-    tiny[i].style.visibility="visible"
-  }
-}
-
-function update_tiny(i) {
-  if (--tinyv[i]==25) {
-    tiny[i].style.width="1px";
-    tiny[i].style.height="1px";
-  }
-  if (tinyv[i]) {
-    tinyy[i]+=1+Math.random()*3;
-    tinyx[i]+=(i%5-2)/5;
-    if (tinyy[i]<shigh+sdown) {
-      tiny[i].style.top=tinyy[i]+"px";
-      tiny[i].style.left=tinyx[i]+"px";
-    }
-    else {
-      tiny[i].style.visibility="hidden";
-      tinyv[i]=0;
-      return;
-    }
-  }
-  else tiny[i].style.visibility="hidden";
-}
-
-document.onmousemove=mouse;
-function mouse(e) {
-  if (e) {
-    y=e.pageY;
-    x=e.pageX;
-  }
-  else {
-    set_scroll();
-    y=event.y+sdown;
-    x=event.x+sleft;
-  }
-}
-
-window.onscroll=set_scroll;
-function set_scroll() {
-  if (typeof(self.pageYOffset)=='number') {
-    sdown=self.pageYOffset;
-    sleft=self.pageXOffset;
-  }
-  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
-    sdown=document.body.scrollTop;
-    sleft=document.body.scrollLeft;
-  }
-  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
-    sleft=document.documentElement.scrollLeft;
-    sdown=document.documentElement.scrollTop;
-  }
-  else {
-    sdown=0;
-    sleft=0;
-  }
-}
-
-window.onresize=set_width;
-function set_width() {
-  var sw_min=999999;
-  var sh_min=999999;
-  if (document.documentElement && document.documentElement.clientWidth) {
-    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
-    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
-  }
-  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
-    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
-    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
-  }
-  if (document.body.clientWidth) {
-    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
-    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
-  }
-  if (sw_min==999999 || sh_min==999999) {
-    sw_min=800;
-    sh_min=600;
-  }
-  swide=sw_min;
-  shigh=sh_min;
-}
-
-function createDiv(height, width) {
-  var div=document.createElement("div");
-  div.style.position="absolute";
-  div.style.height=height+"px";
-  div.style.width=width+"px";
-  div.style.overflow="hidden";
-  return (div);
-}
-
-function newColour() {
-  var c=new Array();
-  c[0]=255;
-  c[1]=Math.floor(Math.random()*256);
-  c[2]=Math.floor(Math.random()*(256-c[1]/2));
-  c.sort(function(){return (0.5 - Math.random());});
-  return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
-}
-// ]]>
-</script>
+   
   </head>
   <body>
-    <ul>
-      <li><a class="active" href="index.html">home</a></li>
-      <li><a href="music.html">music</a></li>
-      <li><a href="art.html">gallery</a></li>
-      <li><a href="extra.html">extra fun</a></li>
-    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
+    <img src="cousinjump6.gif" class="draggable">
+    <img src="cousinjump15.gif" class="draggable">
+    <img src="cousinjump12.gif" class="draggable">
+    <img src="princejump.gif" class="draggable">
+    <img src="cousinjump14.gif" class="draggable">
+    <script>
+      // here you tell InteractJS which class of items you'd like to be draggable
+    interact('.draggable')
+      .draggable({
+        listeners: {
+          // when a user drags the object ('on dragmove') run this function
+          move: dragMoveListener,
+          // call this function on every dragend event
+          end (event) {
+        console.log("item dropped!")
+        }
+      }
+    })
+    function dragMoveListener (event) {
+  // all this stuff gets the position of the item while it's being dragged
+  var target = event.target
+  // keep the dragged position in the data-x/data-y attributes
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
 
-    <p>
-      blinkies are 150x20 pixel graphics that feature interests or 
-      little quips! they're super fun to make and super duper fun to collect<br>
-      most of these aren't made by me - but some are :P
-    </p>
+  // translate the element
+  target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
 
-    <div id="blinkies">
-      <img class="blinkie" src="https://plasticdino.neocities.org/blinkie/stupid%20horse.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/2/throstttstores.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/2/I3css.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/2/goodwill.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/4/addicted%202%20grapics.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/6/mlp.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/6/fakegamer.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/7/i-love-music.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/7/love-green.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/8/blood8-cobalt.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/9/drawing%20in%20class.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/9/weird_al.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/10/fake-png.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/10/flesh.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/11/luv_ipod.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/11/ponies.gif">
-      <img class="blinkie" src="https://blinkie-net.neocities.org/blinkies/11/smile.gif">
-      <img class="blinkie" src="https://plasticdino.neocities.org/blinkie/nbequalsawesome.gif">
-      <img class="blinkie" src="number1AJ.gif">
-      <img class="blinkie" src="stonebutchblues.gif">
-      <img class="blinkie" src="https://file.garden/aTiWCoGB_i5vfo0E/Blinkie%20orange%20I%20know%20what%20I%20like.gif">
-      <img class="blinkie" src="https://pixelsafari.neocities.org/blinkies/web/ipod.gif">
-      <img class="blinkie" src="https://pixelsafari.neocities.org/blinkies/glow2.gif">
-      <img class="blinkie" src="https://pixelsafari.neocities.org/blinkies/innerdork.gif">
-      <img class="blinkie" height="20" src="https://pixelsafari.neocities.org/blinkies/chillinginbed.gif">
-      <img class="blinkie" src="butch4butch.gif">
-      <img class="blinkie" src="https://gifcity.carrd.co/assets/images/gallery186/6ac025c1.gif?v=3fc8f5cd">
-      <img class="blinkie" src="https://gifcity.carrd.co/assets/images/gallery165/7e4c5b66.gif?v=3fc8f5cd">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/a81.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/b55.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/c17.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/d55.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/e16.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/e30.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/e70.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/e93.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/v75.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/g2.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/g108.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/w3.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/w7.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/x44.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/y1.gif">
-      <img class="blinkie" src="https://adriansblinkiecollection.neocities.org/33.gif">
-      <img class="blinkie" src="biggerthief.gif">
-      <img class="blinkie" src="plastichorse.gif">
-      <img class="blinkie" src="fim.gif">
-      <img class="blinkie" src="bassvictim.gif">
-      <img class="blinkie" src="https://afroken.neocities.org/GRAPHICS/BLINKIES/ownlittleworld.gif">
-      <img class="blinkie" src="https://afroken.neocities.org/GRAPHICS/BLINKIES/katamari.gif">
-      <img class="blinkie" src="https://afroken.neocities.org/GRAPHICS/BLINKIES/greenvector.gif">
-      <img class="blinkie" src="https://afroken.neocities.org/GRAPHICS/BLINKIES/bliss.gif">
-    </div>
-    <p>
-      my friend called them "virtual bumber stickers" and i am inclined to agree
-    </p>
-    <div id="stamps">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/2/bug.png">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/3/flubtershy.gif">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/Pp/hehe%20homestuckk.gif">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/6/XD.jpg">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/6/Enter.gif">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/6/mlp_fim.png">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/6/twilight.gif">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/7/colors.gif">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/7/draw-ponies.png">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/7/mom1.png">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/7/lesbianrainbowdash.png">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/7/music-is-life1.gif">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/7/weird-ppl.png">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/8/buttons.png">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/8/dj_pony.jpg">
-      <img class="stamp" src="https://blinkie-net.neocities.org/Stamps/8/luv_mustache.png">
-      <img class="stamp" width="99" src="https://file.garden/aTiWCoGB_i5vfo0E/Stamp%20TV%20shows%20Rainbow%20Dash.gifv">
-      <img class="stamp" src="https://pixelsafari.neocities.org/stamps/isupportgrass.png">
-      <img class="stamp" src="https://pixelsafari.neocities.org/stamps/believe.png">
-      <img class="stamp" src="https://pixelsafari.neocities.org/stamps/more/mlp.gif">
-      <img class="stamp" src="https://pixelsafari.neocities.org/stamps/more/music.jpg">
-      <img class="stamp" width="101" src="https://pixelsafari.neocities.org/stamps/hosie.gif">
-      <img class="stamp" src="https://paleking.carrd.co/assets/images/gallery07/731dea55.png?v26071698921061">
-      <img class="stamp" src="https://paleking.carrd.co/assets/images/gallery05/2623f373.gif?v26071698921061">
-      <img class="stamp" src="https://adriansblinkiecollection.neocities.org/stamps/j19.gif">
-      <img class="stamp" src="https://adriansblinkiecollection.neocities.org/stamps/i33.gif">
-      <img class="stamp" src="https://adriansblinkiecollection.neocities.org/stamps/i10.png">
-      <img class="stamp" src="https://adriansblinkiecollection.neocities.org/stamps/f36.png">
-      <img class="stamp" src="https://adriansblinkiecollection.neocities.org/stamps/e99.png">
-      <img class="stamp" src="https://adriansblinkiecollection.neocities.org/stamps/k16.png">
-      <img class="stamp" src="https://adriansblinkiecollection.neocities.org/stamps/b57.png">
-      <img class="stamp" src="https://64.media.tumblr.com/7e4cea427bb85789eb9d1bfd56806f15/a77aa48f2532ea45-cb/s100x200/b41573d2372b9d3bfe0676803433ca00c743cabe.gifv">
-      <img class="stamp" src="https://gifcity.carrd.co/assets/images/gallery318/2c956116.png?v=3fc8f5cd">
-      <img class="stamp" src="https://gifcity.carrd.co/assets/images/gallery59/6588a2ab.gif?v=3fc8f5cd">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/iloveorange.png">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/prince.png">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/tomodachilife.gif">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/ilovestickers.png">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/2008.png">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/kaomoji.gif">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/pinkiedash.png">
-      <img class="stamp" src="https://afroken.neocities.org/GRAPHICS/STAMPS/butch.png">
-    </div>
-    <p>
-      stamps are similar to blinkies but their dimensions are 60x100 pixels<br>
-      there are also so many other variations of cute gif decorations! like user boxes, dividers, favicons,
-      and buttons - cool stuff
-    </p>
+  // update the position attributes
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
+}
 
-    
-    
+// this function is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener
+    </script>
   </body>
 </html>
