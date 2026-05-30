@@ -38,7 +38,8 @@ Select ONE Additional Feature to Add
       }
   
       #top {
-
+        grid-area: header;
+        text-align: center;
       }
 
       #sidebar {
@@ -48,10 +49,28 @@ Select ONE Additional Feature to Add
         max-width: 400px;
         margin-right: 20px;
         align-content: center;
+        grid-area: menu;
+        float: left;
       }
 
       iframe {
         border: inset;
+      }
+
+      #bigdiv {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "menu content"
+          "footer footer";
+        grid-template-columns: 1fr 3fr;
+        gap: 3px;
+        background-color: dodgerblue;
+        padding: 5px;
+      }
+
+      #footer {
+        grid-area: footer;
       }
 
       ul {
@@ -84,6 +103,8 @@ Select ONE Additional Feature to Add
       .extradiv {
         max-width: 700px;
         margin: auto;
+        grid-area: content;
+        float: right;
       }
 
       @keyframes marquee {
@@ -380,6 +401,7 @@ function newColour() {
   </head>
   <body>
     <div id="top">
+<div id="bidiv">
     <center>
     <img src="Illustration82.png" id="me">
     <ul>
@@ -565,9 +587,12 @@ function newColour() {
       there are also so many other variations of cute gif decorations! like user boxes, dividers, favicons,
       and buttons - cool stuff
     </p>
+    <div id="footer">
     <center>
     <img src="ponyconga.gif">
     </center>
+    </div>
   </div>
+</div>
   </body>
 </html>
