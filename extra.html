@@ -51,7 +51,6 @@
       <li><a href="music.html">music</a></li>
       <li><a href="art.html">gallery</a></li>
       <li><a class="active" href="extra.html">extra fun</a></li>
-      <li><a href="backup.html">backup</a></li>
     </ul>
     <!-- ⬇⬇⬇⬇⬇⬇ Main Page Content -->
 
@@ -71,40 +70,7 @@
       </ul>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.10.17/interact.min.js"></script>
-    <img src="https://cinni.neocities.org/images/creatures/hellokitty/hk-07.gif" class="draggable">
-    <script>
-      // here you tell InteractJS which class of items you'd like to be draggable
-interact('.draggable')
-  .draggable({
-    listeners: {
-      // when a user drags the object ('on dragmove') run this function
-      move: dragMoveListener,
-      // call this function on every dragend event
-      end (event) {
-        console.log("item dropped!")
-      }
-    }
-  })
-
-function dragMoveListener (event) {
-  // all this stuff gets the position of the item while it's being dragged
-  var target = event.target
-  // keep the dragged position in the data-x/data-y attributes
-  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
-  // translate the element
-  target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
-
-  // update the position attributes
-  target.setAttribute('data-x', x)
-  target.setAttribute('data-y', y)
-}
-
-// this function is used later in the resizing and gesture demos
-window.dragMoveListener = dragMoveListener
-    </script>
+   
     
   </body>
 </html>
