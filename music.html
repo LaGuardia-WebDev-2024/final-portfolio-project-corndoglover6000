@@ -5,6 +5,9 @@
     <title>the ultimate corndoglover website</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="https://afroken.neocities.org/GRAPHICS/FAVICONS/musicnote2.gif">
     <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap" rel="stylesheet">
@@ -41,6 +44,7 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        font-family: "Unkempt", cursive;
       }
 
       li a:hover:not(.active) {
@@ -58,11 +62,43 @@
 
       .review {
         margin: auto;
+        width: 600px;
       }
 
-      img {
-        margin: auto;
+      .unkempt-regular {
+        font-family: "Unkempt", cursive;
+        font-weight: 400;
+        font-style: normal;
       }
+
+      .unkempt-bold {
+        font-family: "Unkempt", cursive;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      p {
+        font-family: "Unkempt", cursive;
+      }
+
+      /* Grow */
+      .hvr-grow {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
+
+      .hvr-grow:hover,
+      .hvr-grow:focus,
+      .hvr-grow:active {
+        transform: scale(1.1);
+      }
+
     </style>
     <script type="text/javascript">
 // <![CDATA[
@@ -263,7 +299,8 @@ function set_width() {
   </head>
   <body>
     <!-- ⬆⬆⬆⬆ Nav Bar -->
-    <img src="https://pixelsafari.neocities.org/dividers/more/itunes.png">
+    <center><img src="https://pixelsafari.neocities.org/dividers/more/itunes.png">
+    </center>
     <ul>
       <li><a href="index.html">home</a></li>
       <li><a class="active" href="music.html">music</a></li>
@@ -275,53 +312,54 @@ function set_width() {
 
     <!-- ⬇⬇⬇⬇⬇⬇ Main Page Content -->
     <div class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1125340329/size=large/bgcol=ffffff/linkcol=2ebd35/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bigthief.bandcamp.com/album/dragon-new-warm-mountain-i-believe-in-you">Dragon New Warm Mountain I Believe In You by Big Thief</a></iframe>
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1125340329/size=large/bgcol=ffffff/linkcol=2ebd35/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bigthief.bandcamp.com/album/dragon-new-warm-mountain-i-believe-in-you">Dragon New Warm Mountain I Believe In You by Big Thief</a></iframe>
       <p>
-        this is my favorite album of all time, and i think it will be forever. an experimental indie-rock-folksy double LP where each track is better than the last? yes please! this album also has my favorite song of all time, Blue Lightning. my other favorite tracks are Spud Infinity and Little Things (if i kept going we would be here all day.) the only thing that could make it better was if it had 27 songs instead of 20. spud infinity/10
+        this is my favorite album of all time, and i think it will be forever. an experimental indie-rock-folksy double LP where each track is better than the last? yes please! this album also has my favorite song of all time: Blue Lightning. my other favorite tracks are Spud Infinity and Little Things (if i kept going we would be here all day.) the only thing that could make it better was if it had 27 songs instead of 20. spud infinity/10
       </p>
     </div>
-    <di class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3469212231/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bassvictim.bandcamp.com/album/forever">Forever by bassvictim</a></iframe>
+    <div class="review">
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3469212231/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bassvictim.bandcamp.com/album/forever">Forever by bassvictim</a></iframe>
       <p>
         this album was my introduction to bassvictim and it's their best in my opinion. it's a really great experience to just sit down and listen to it all the way through. my favorite tracks are It's me Maria, 27a Pitfield St, and Grass is Greener. 10/10
       </p>
     </div>
     <div class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3696059314/size=large/bgcol=ffffff/linkcol=2ebd35/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bigthief.bandcamp.com/album/double-infinity">Double Infinity by Big Thief</a></iframe>
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3696059314/size=large/bgcol=ffffff/linkcol=2ebd35/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bigthief.bandcamp.com/album/double-infinity">Double Infinity by Big Thief</a></iframe>
       <p>
         the latest and one of the greatest big thief albums. they have a different sound but boy does it sound so good. me and my dad both loved the laraaji feature on grandmother. i was really lucky to see the whole band (including laraaji and the backup singers and musicians) play the entire album all the way through at forest hills in the fall. one of my most beautiful concert experiences. my favorite tracks are Los Angeles and Double Infinity. two infinities/10
       </p>
     </div>
     <div class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=373379249/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://blackcountrynewroad.bandcamp.com/album/forever-howlong">Forever Howlong by Black Country, New Road</a></iframe>
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=373379249/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://blackcountrynewroad.bandcamp.com/album/forever-howlong">Forever Howlong by Black Country, New Road</a></iframe>
       <p>
         thank you to my friend who recommended me this album :) this was maybe my first experience with math rock and i really enjoy it! my favorite tracks are Happy Birthday, Besties, and For the Cold Country. i love Happy Birthday so much i learned it on the piano. 9/10
       </p>
     </div>
     <div class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2608348208/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://worldpeacedmt.bandcamp.com/album/the-velvet-underground-rowan">The Velvet Underground &amp; Rowan by Worldpeace DMT</a></iframe>
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2608348208/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://worldpeacedmt.bandcamp.com/album/the-velvet-underground-rowan">The Velvet Underground &amp; Rowan by Worldpeace DMT</a></iframe>
       <p>
         this album is very fun! it has a really unique sound and i really like the guitar. My favorite track is Numbers. 8/10 
       </p>
     </div>
     <div class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2104167080/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bassvictim.bandcamp.com/album/-">? by bassvictim</a></iframe>
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2104167080/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bassvictim.bandcamp.com/album/-">? by bassvictim</a></iframe>
       <p>
-        this is a really awesome recent album from bassvictim. short and very sweet. my favorite track is Don't stop me now. 8/10
+        this is a really awesome recent album from bassvictim. short and very sweet. my favorite track is Don't stop me now and Going Home. 8/10
       </p>
     </div>
     <div class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2460937453/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://adriannelenker.bandcamp.com/album/bright-future">Bright Future by Adrianne Lenker</a></iframe>
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2460937453/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://adriannelenker.bandcamp.com/album/bright-future">Bright Future by Adrianne Lenker</a></iframe>
       <p>
         such an awesome solo project from adrianne lenker! the simple guitar and piano songs tug at your heartstrings. it's both heartbreaking and uplifting. my favorite track by far is Fool, but it is a pain to learn on the guitar. donuts/10 
       </p>
     </div>
     <div class="review">
-      <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3015716324/size=large/bgcol=ffffff/linkcol=e99708/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bigthief.bandcamp.com/album/two-hands">Two Hands by Big Thief</a></iframe>
+      <iframe class="hvr-grow" style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3015716324/size=large/bgcol=ffffff/linkcol=e99708/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://bigthief.bandcamp.com/album/two-hands">Two Hands by Big Thief</a></iframe>
       <p>
         two hands is so good. very earthy and raw. Not is an obvious favorite of the people but my favorite track is Forgotten Eyes. two thumbs up/10
       </p>
     </div>
-    <img src="boombox.gif">
+    <center>
+    <img src="boombox.gif"></center>
   </body>
 </html>
