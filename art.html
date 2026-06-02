@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title>the ultimate corndoglover website</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Peralta&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://afroken.neocities.org/GRAPHICS/FAVICONS/ds3.gif">
     <style>
       li a {
@@ -12,6 +15,7 @@
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        font-family: "Peralta", serif;
       }
 
       li a:hover:not(.active) {
@@ -24,11 +28,25 @@
       }
 
       img {
-        max-width: 30%;
-        border-radius: 10px;
+        max-width: 50%;
         object-fit: contain;
         background-color: white;
       }
+
+      .side-scroll {
+        background-color: #ffffff;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 10px;
+      }
+
+      .peralta-regular {
+        font-family: "Peralta", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+
     </style>
     <script type="text/javascript">
 // <![CDATA[
@@ -235,24 +253,17 @@ function set_width() {
       <li><a href="extra.html">extra fun</a></li>
     </ul>
     <!-- ⬇⬇⬇⬇⬇⬇ Main Page Content -->
-    <h1>My Art</h1>
+    
 
-    <div class="parent-flex">
-      <img
-        src="images/HeartIcons.jpeg"
-      />
-      <img
-        src="images/VibeyTunes.png"
-      />
-    </div>
-
-    <div class="parent-flex">
-      <img
-        src="images/VibeyTunes.png"
-      />
-      <img
-        src="images/HeartIcons.jpeg"
-      />
+    <div class="side-scroll">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
+      <img src="Water Curses.jpg" class="hvr-float-shadow">
     </div>
   </body>
 </html>
